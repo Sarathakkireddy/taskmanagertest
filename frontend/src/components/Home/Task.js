@@ -14,7 +14,7 @@ function Task({task,index,toasterror,toastsuccess,load,Setload,navigate}) {
         try{
             const res= await axios({
                 method:"delete",
-                url:`http://localhost:4000/tasks/dtask${task.taskid}`,
+                url:`https://taskmanagertest-tx8r.onrender.com/tasks/dtask${task.taskid}`,
                 headers:{Authorization: localStorage.token},
 
             });
@@ -30,7 +30,7 @@ function Task({task,index,toasterror,toastsuccess,load,Setload,navigate}) {
         try{
             const res=await axios({
                 method:"patch",
-                url:"http://localhost:4000/tasks/updttask",
+                url:"https://taskmanagertest-tx8r.onrender.com/tasks/updttask",
                 data:{
                     taskid:task.taskid,
                     completed:task.completed==="true"?"false":"true",

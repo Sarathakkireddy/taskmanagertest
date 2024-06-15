@@ -27,7 +27,7 @@ function Register({Setlogintype,toast}) {
     try{
       const resp=await axios({
         method:"post",
-        url:"http://localhost:4000/taskmanager/register",
+        url:"https://taskmanagertest-tx8r.onrender.com/taskmanager/register",
         data:{
           fname: fnameref.current.value,
           lname: lnameref.current.value,

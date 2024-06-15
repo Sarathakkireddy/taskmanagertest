@@ -28,7 +28,7 @@ function Viewtask() {
             const commentsg= async ()=>{
                 const res= await axios({
                     method:"get",
-                    url:`http://localhost:4000/tasks/getcomments${viewtask.taskid}`,
+                    url:`https://taskmanagertest-tx8r.onrender.com/tasks/getcomments${viewtask.taskid}`,
                     headers:{Authorization: localStorage.token},
     
                 });
@@ -63,7 +63,7 @@ function Viewtask() {
         try{
             const res=await axios({
                 method:"post",
-                url:"http://localhost:4000/tasks/ccmnt",
+                url:"https://taskmanagertest-tx8r.onrender.com/tasks/ccmnt",
                 data:{
                     taskid:viewtask.taskid,
                     comment:ccmntref.current.value,
@@ -91,7 +91,7 @@ function Viewtask() {
             try{
                 const res=await axios({
                     method:"patch",
-                    url:"http://localhost:4000/tasks/updtrate",
+                    url:"https://taskmanagertest-tx8r.onrender.com/tasks/updtrate",
                     data:{
                         taskid:viewtask.taskid,
                         rate:i,
@@ -120,7 +120,7 @@ function Viewtask() {
         try{
             const res=await axios({
                 method:"patch",
-                url:"http://localhost:4000/tasks/updtchoice",
+                url:"https://taskmanagertest-tx8r.onrender.com/tasks/updtchoice",
                 data:{
                     taskid:viewtask.taskid,
                     choice:choice,

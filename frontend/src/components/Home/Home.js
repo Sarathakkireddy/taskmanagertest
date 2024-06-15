@@ -43,7 +43,7 @@ function Home() {
   const users= async  ()=>{
     try{
       const res=await axios({method:"get",
-        url:"http://localhost:4000/taskmanager/usersdets",
+        url:"https://taskmanagertest-tx8r.onrender.com/taskmanager/usersdets",
         headers:{Authorization:localStorage.token}
       });
       if(res.status===200){
@@ -64,7 +64,7 @@ function Home() {
   const tasks= async ()=>{
     try{
       const res=await axios({method:"get",
-        url:"http://localhost:4000/tasks/alltasks",
+        url:"https://taskmanagertest-tx8r.onrender.com/tasks/alltasks",
         headers:{Authorization:localStorage.token}
       });
       if(res.status===200){
@@ -120,7 +120,7 @@ async function createTask(){
     try{
       const resp=await axios({
         method:"post",
-        url:"http://localhost:4000/tasks/ctask",
+        url:"https://taskmanagertest-tx8r.onrender.com/tasks/ctask",
         data:{
           title:ctitleref.current.value,
           decr:cdescref.current.value,
