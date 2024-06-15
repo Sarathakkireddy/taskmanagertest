@@ -1,0 +1,16 @@
+.log{
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.lbtn{
+    background-color: #74512D;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.slink{
+    color: blue;
+    font-weight: bolder;
+}

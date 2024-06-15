@@ -1,0 +1,85 @@
+.viewcont{
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    background-color: #FED8B1;
+}
+
+.vdisp{
+    display: inline-block;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    width: 50%;
+    text-align: left;
+    border-radius: 15px;
+    margin-top: 15px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ECB176;
+}
+.vheadh{
+    text-align: center;
+}
+.lbldes{
+    background-color: beige;
+}
+.vdesc{
+    display: inline-block;
+}
+
+.vnav{
+    width: 99%;
+    height: 50px;
+    border-bottom: 1px solid black;
+    background-color: #A67B5B;
+}
+
+.lgoutbtn{
+    float: right;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.bckbtn{
+    float: left;
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+#selstar{
+    color: gold;
+}
+.cmntsdispdiv{
+    text-align: center;
+    overflow: scroll;
+}
+
+.cmntpostbtn{
+    background-color: rgb(53, 53, 204);
+    color: white;
+    font-weight: bolder;
+    padding: 5px;
+    font-size: large;
+    margin: 3px;
+}
+
+.cmttexta{
+    margin-top: 15px;
+}
+
+.cmntlbl{
+    background-color: rgb(87, 233, 136);
+    font-weight: bold;
+    font-size: large;
+    margin-right: 5px;
+}
+
+.cmntmain{
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    margin-top: 20px;
+}
