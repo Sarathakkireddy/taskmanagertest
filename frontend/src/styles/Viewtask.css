@@ -88,3 +88,19 @@
     margin-top: 20px;
     text-align: center;
 }
+
+@media (max-width:920px){
+    .viewcont{
+        width: 100vw;
+        min-height: 100vh;
+    }
+    .vdisp{
+        width: 80%;
+    }
+    .cmntpostbtn{
+        background-color: rgb(53, 53, 204);
+        color: white;
+        font-weight: bolder;
+        font-size: small;
+    }
+}

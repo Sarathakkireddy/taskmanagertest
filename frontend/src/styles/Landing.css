@@ -25,3 +25,34 @@
 .logintyp{
     color: black;
 }
+@media (max-width:920px) {
+    .landing-div{
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        color:white;
+        text-align: center;
+    }
+    .login-register-pane{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background: rgb(237,10,10);
+        background: linear-gradient(45deg, rgba(237,10,10,1) 0%, rgba(11,11,232,1) 52%, rgba(255,0,35,1) 100%);
+        /* border: 1px solid black; */
+        width: 20%;
+        height: 50%;
+        float: right;
+        text-align: center;
+        margin-top: 12%;
+        margin-right: 15%;
+        border-radius: 15px;
+        min-width: 250px;
+    }
+    .landing-title{
+        display: inline-block;
+        margin-top: 20%;
+        margin-left: 15%;
+    }
+    .logintyp{
+        color: black;
+    }
+}

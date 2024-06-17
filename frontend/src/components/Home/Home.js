@@ -166,8 +166,8 @@ async function createTask(){
         <div className='modelcont'>
             <input type='text' ref={ctitleref} className='ctitle' placeholder='Title' /><br/>
             <input type='text' ref={cdescref} className='cdesc' placeholder='Description'/><br/>
-            <label>collabrator: </label>
-            <select ref={ccollabref}>
+            <label className='lblcollab'>collabrator: </label>
+            <select className='collabsel' ref={ccollabref}>
               <option className='uselopt'>null</option>
               {usersdet?usersdet.map((usr,index)=>{return <option className='uselopt' key={index}>{usr.email}</option>}):<></>}
               </select><br/>

@@ -17,6 +17,8 @@
     color: black;
    
 }
-/* .cmntp{
-    overflow: scroll;
-} */
+@media (max-width:920px){
+    .commentcard{
+        width: 80%;
+    }
+}
