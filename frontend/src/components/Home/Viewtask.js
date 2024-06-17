@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import '../../styles/Viewtask.css'
 import { AContext } from '../../context/acontext'
-import { useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer } from "react-toastify"
 import { toast } from "react-toastify"
@@ -42,7 +42,7 @@ function Viewtask() {
           }
           
 
-    },[viewtask]);
+    },[viewtask,reload]);
     
     function toastsuccess(msg){
       toast.success(msg, {
@@ -73,6 +73,8 @@ function Viewtask() {
             if(res.status===200){
                 toastsuccess("commented");
                 ccmntref.current.value="";
+                Setreload(reload+1);
+                Setload(load+1);
             }
 
         }catch(e){
@@ -131,6 +133,11 @@ function Viewtask() {
             if(res.status===200){
                 Setreload(reload+1);
                 Setload(load+1);
+                if(sele==="u"){
+                    viewtask.userchoice=choice;
+                }else if(sele==="c"){
+                    viewtask.collabchoice=choice;
+                }
             }else{
                 console.log("error");
             }
@@ -142,14 +149,31 @@ function Viewtask() {
     if(viewtask&&reload){
         for(let i=0;i<5;i++){
             if(i<viewtask.userrating){
-                ustars.push(<i key={i} onClick={()=>{updaterating("u",i+1)}} id='selstar' className="fa-solid fa-star"></i>);
+                if(viewtask.user===localStorage.id){
+                    ustars.push(<i key={i} onClick={()=>{updaterating("u",i+1)}} id='selstar' className="fa-solid fa-star"></i>);
+                }else{
+                    ustars.push(<i key={i} id='selstar' className="fa-solid fa-star"></i>);
+                }
+                
             }else{
-                ustars.push(<i key={i} onClick={()=>{updaterating("u",i+1)}} className="fa-regular fa-star"></i>);
+                if(viewtask.user===localStorage.id){
+                    ustars.push(<i key={i} onClick={()=>{updaterating("u",i+1)}} className="fa-regular fa-star"></i>);
+                }else{
+                    ustars.push(<i key={i}  className="fa-regular fa-star"></i>);
+                }
             }
             if(i<viewtask.collabrating){
-                cstars.push(<i key={i} onClick={()=>{updaterating("c",i+1)}} id='selstar' className="fa-solid fa-star"></i>);
+                if(viewtask.collab===localStorage.id){
+                    cstars.push(<i key={i} onClick={()=>{updaterating("c",i+1)}} id='selstar' className="fa-solid fa-star"></i>);
+                }else{
+                    cstars.push(<i key={i} id='selstar'  className="fa-solid fa-star"></i>);
+                }
             }else{
-                cstars.push(<i key={i} onClick={()=>{updaterating("c",i+1)}} className="fa-regular fa-star"></i>);
+                if(viewtask.collab===localStorage.id){
+                    cstars.push(<i key={i} onClick={()=>{updaterating("c",i+1)}}  className="fa-regular fa-star"></i>);
+                }else{
+                    cstars.push(<i key={i}  className="fa-regular fa-star"></i>);
+                }
             }
     
         }
@@ -172,16 +196,16 @@ function Viewtask() {
            </>:<></>}<br/>
           {reload&&viewtask?
            <>{viewtask.user===localStorage.id?<><label>User : </label>
-           {viewtask.userchoice==="0"?<><span onClick={()=>{updatechoice("u","like")}}><label> like </label><i className="fa-regular fa-thumbs-up"></i></span><span onClick={()=>{updatechoice("u","dislike")}}><label> dilike </label><i className="fa-regular fa-thumbs-down"></i></span></>:<>
-           {viewtask.userchoice==="like"?<>
+           {viewtask.userchoice==="0"&&reload?<><span onClick={()=>{updatechoice("u","like")}}><label> like </label><i className="fa-regular fa-thumbs-up"></i></span><span onClick={()=>{updatechoice("u","dislike")}}><label> dilike </label><i className="fa-regular fa-thumbs-down"></i></span></>:<>
+           {viewtask.userchoice==="like"&&reload?<>
             <span onClick={()=>{updatechoice("u","like")}}><label> like </label><i className="fa-solid fa-thumbs-up"></i></span><span onClick={()=>{updatechoice("u","dislike")}}><label> dilike </label><i className="fa-regular fa-thumbs-down"></i></span>
            </>:<>
            <span onClick={()=>{updatechoice("u","like")}}><label> like </label><i className="fa-regular fa-thumbs-up"></i></span><span onClick={()=>{updatechoice("u","dislike")}}><label> dilike </label><i class="fa-solid fa-thumbs-down"></i></span>
            </>}
            </>}
            </>:<><label>Collabrator : </label>
-           {viewtask.collabchoice==="0"?<><span onClick={()=>{updatechoice("c","like")}}><label> like </label><i className="fa-regular fa-thumbs-up"></i></span><span onClick={()=>{updatechoice("c","dislike")}}><label> dilike </label><i className="fa-regular fa-thumbs-down"></i></span></>:<>
-            {viewtask.collabchoice==="like"?<>
+           {viewtask.collabchoice==="0"&&reload?<><span onClick={()=>{updatechoice("c","like")}}><label> like </label><i className="fa-regular fa-thumbs-up"></i></span><span onClick={()=>{updatechoice("c","dislike")}}><label> dilike </label><i className="fa-regular fa-thumbs-down"></i></span></>:<>
+            {viewtask.collabchoice==="like"&&reload?<>
             <span onClick={()=>{updatechoice("c","like")}}><label> like </label><i className="fa-solid fa-thumbs-up"></i></span><span  onClick={()=>{updatechoice("c","dislike")}}><label> dilike </label><i className="fa-regular fa-thumbs-down"></i></span>
            </>:<>
            <span onClick={()=>{updatechoice("c","like")}}><label> like </label><i className="fa-regular fa-thumbs-up"></i></span><span  onClick={()=>{updatechoice("c","dislike")}}><label> dilike </label><i class="fa-solid fa-thumbs-down"></i></span>
@@ -197,7 +221,7 @@ function Viewtask() {
                 <button className='cmntpostbtn' onClick={()=>{crcomment()}}>post</button>
                 </div>
                 <div className='cmntsdispdiv'>
-                    {comments?comments.map((cmnt,index)=>{return <Commentsdisp cmnt={cmnt} index={index}/>}):<></>}
+                    {comments&&load?comments.map((cmnt,index)=>{return <Commentsdisp cmnt={cmnt} index={index}/>}):<></>}
                 </div>
             </div>
 

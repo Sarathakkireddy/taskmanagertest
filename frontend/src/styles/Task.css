@@ -3,22 +3,25 @@
     width: 100%;
     /* border: 1px solid black; */
     margin-top: 15px;
+    background-color: #f0a009;
+    color: black;
+    border-radius: 25px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .bl{
     font-weight: bolder;
 }
 .taskcard{
-    
     width: 80%;
     text-align: left;
     padding-left: 15px;
 }
 .tskcmp,.tskncmp{
     border: 1px solid black;
-    width: 15%;
+    width: 10%;
     font-weight: bolder;
     padding-top: 50px;
+    border-radius: 25px;
 }
 
 .tskcmp{
@@ -31,5 +34,6 @@
 .tskdel{
     margin-top: 50px;
     padding: 3px;
+    color: black;
 }
 

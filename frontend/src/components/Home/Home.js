@@ -17,9 +17,12 @@ const customStyles = {
     right: '50%',
     bottom: 'auto',
     marginRight: '-50%',
+    width:'25%',
     transform: 'translate(-50%, -50%)',
-    background:'rgb(197, 195, 195)',
+    background: 'rgb(254,255,0)',
+    background: 'linear-gradient(45deg, rgba(254,255,0,1) 0%, rgba(11,232,230,1) 67%, rgba(0,255,34,1) 100%)',
     borderRadius:'20px',
+    fontWeight:'bolder',
   },
 };
 
@@ -116,7 +119,6 @@ function closeModal() {
 }
 
 async function createTask(){
-  // console.log(ccollabref.current.value);
     try{
       const resp=await axios({
         method:"post",

@@ -36,8 +36,8 @@ function Register({Setlogintype,toast}) {
           password:pwdref.current.value,
         },
       });
-    
-    toast.success("Registered successfully", {
+    if(resp.status===200){
+      toast.success("Registered successfully", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -48,9 +48,24 @@ function Register({Setlogintype,toast}) {
         theme: "light",
       });
       Setlogintype('LOGIN')
-
+    }else{
+      console.log(resp);
+      toasterror(resp.message);
+      fnameref.current.value="";
+      lnameref.current.value="";
+      emailref.current.value="";
+      phoneref.current.value="";
+      pwdref.current.value="";
+      cnfpwdref.current.value="";
+    }
     }catch(e){
       toasterror(e.response.data.message);
+      fnameref.current.value="";
+      lnameref.current.value="";
+      emailref.current.value="";
+      phoneref.current.value="";
+      pwdref.current.value="";
+      cnfpwdref.current.value="";
     }
 
   }
